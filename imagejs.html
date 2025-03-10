@@ -1,0 +1,22 @@
+<img  name="i1" width="400" height="300">
+<br>
+<button onclick="nextImage()">Next</button>
+<br>
+<button onclick="Stop()">Stop</button>
+<script>
+    var images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+    var i = 0;
+    
+    function nextImage() {
+        document.i1.src = images[i];
+        i++;
+        x= setTimeout("nextImage()",1000);
+        if(i==3){
+            i=0;
+        }
+    }
+    function Stop(){
+        clearTimeout(x);
+    }
+    document.i1.src = images[0];
+</script>
